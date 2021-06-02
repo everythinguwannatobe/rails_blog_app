@@ -18,7 +18,7 @@ group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   # ===== App specific gems ======================
   gem "standard", require: false
-  gem "rspec-rails"
+  gem "rspec-rails", "~> 5.0.0"
 end
 
 group :development do
@@ -40,6 +40,7 @@ group :test do
   # ===== App specific gems ======================
   gem "rexml"
   gem "simplecov", require: false
+  gem "capybara"
 end
 
 group :production do
