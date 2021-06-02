@@ -1,0 +1,31 @@
+# Refer: https://evilmartians.com/chronicles/rubocoping-with-legacy-bring-your-ruby-code-up-to-standard
+
+inherit_mode:
+  merge:
+    - Exclude
+
+require:
+  # Performance cops are bundled with Standard
+  - rubocop-performance
+  # Standard's config uses this custom cop, so it must be loaded, but longer viable
+  # - standard/cop/semantic_blocks
+  # Fix for single line braces - https://github.com/testdouble/standard/issues/271#issuecomment-812744875
+  - standard/cop/block_single_line_braces
+
+inherit_gem:
+  standard: config/base.yml
+
+inherit_from:
+  - .rubocop_rails.yml
+  - .rubocop_rspec.yml
+  - .rubocop_strict.yml
+
+AllCops:
+  Exclude:
+    - bin/**/*
+    - config/**/*
+    - db/schema.rb
+    - db/migrate/*.rb
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
