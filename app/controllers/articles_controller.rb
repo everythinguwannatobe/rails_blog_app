@@ -1,6 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show]
+
   def index
     @articles = Article.all.order(created_at: :desc)
+  end
+
+  def show
   end
 
   def new
@@ -22,5 +27,9 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:body, :title)
+  end
+
+  def set_article
+    @article = Article.find(params[:id])
   end
 end

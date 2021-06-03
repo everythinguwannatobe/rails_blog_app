@@ -4,7 +4,7 @@
   <h1 id="no-articles">No Articles Created</h1>
 <% else %>
   <% @articles.each do |article| %>
-    <div class="my-3">
+    <div class="card p-3 my-3" style="background-color: white">
       <div class="mb-3 pl-3">
         <h2><%= link_to article.title, article_path(article), class: "text-decoration-none" %></h2>
       </div>
