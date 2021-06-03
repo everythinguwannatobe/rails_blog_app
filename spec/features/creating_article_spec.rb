@@ -1,7 +1,6 @@
 require "rails_helper"
 
 RSpec.describe "Creating Articles", type: :feature do
-
   scenario "A user can create an article" do
     visit "/"
 
@@ -9,7 +8,7 @@ RSpec.describe "Creating Articles", type: :feature do
 
     fill_in "Title", with: "Creating a blog"
     fill_in "Body", with: "Lorem ipsum"
-    
+
     click_button "Create Article"
 
     expect(page).to have_content("Article has been created")
