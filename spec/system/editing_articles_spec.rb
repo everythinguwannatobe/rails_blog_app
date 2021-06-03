@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "EditingArticles", type: :system do
   before do
@@ -16,7 +16,6 @@ RSpec.describe "EditingArticles", type: :system do
     click_button "Update Article"
 
     expect(page).to have_content("Article has been saved")
-    expect(page.current_path).to eq(article_path(@article))
-
+    expect(page).to have_current_path(article_path(@article), ignore_query: true)
   end
 end
