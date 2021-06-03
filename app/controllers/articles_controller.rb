@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = Article.all.order(created_at: :desc)
@@ -32,6 +32,15 @@ class ArticlesController < ApplicationController
       redirect_to @article
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @article.destroy
+      flash[:success] = "Article has been deleted"
+      redirect_to articles_path
+    else
+      redirect_to article_path(@article)
     end
   end
 

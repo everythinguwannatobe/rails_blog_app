@@ -12,5 +12,10 @@
 
   <div>
     <%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary btn-lg" %>
+
+    <%= link_to "Delete Article", article_path(@article), method: :delete,
+                data: { confirm: "Are you sure you wish to delete this article?" },
+                class: 'btn btn-outline-danger btn-lg mx-3' %>
+
   </div>
 </article>
