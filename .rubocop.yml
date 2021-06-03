@@ -1,3 +1,9 @@
+inherit_from:
+  - .rubocop_todo.yml
+  - .rubocop_rails.yml
+  - .rubocop_rspec.yml
+  - .rubocop_strict.yml
+
 # Refer: https://evilmartians.com/chronicles/rubocoping-with-legacy-bring-your-ruby-code-up-to-standard
 
 inherit_mode:
@@ -15,10 +21,7 @@ require:
 inherit_gem:
   standard: config/base.yml
 
-inherit_from:
-  - .rubocop_rails.yml
-  - .rubocop_rspec.yml
-  - .rubocop_strict.yml
+
 
 AllCops:
   Exclude:

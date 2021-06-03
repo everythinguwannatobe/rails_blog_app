@@ -1,12 +1,14 @@
+$primary: #64103F;
+
 body {
   //padding-top: 80px;
   background: #e1e1e1;
-  color: #64103F;
+  color: $primary;
 }
 
 // Navbar styling
 .navbar {
-  background: #64103F;
+  background: $primary;
   padding-bottom: 20px;
 }
 
@@ -36,7 +38,7 @@ body {
 
 // Form styling
 .page-heading, div > label {
-  color: #64103F;
+  color: $primary;
 }
 
 

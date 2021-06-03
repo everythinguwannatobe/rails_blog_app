@@ -7,5 +7,5 @@ application up and running.
 **Developer Features**
 - Rubocop with Standardrb
 - Guard with live-reload
+- Add Rubocop pre-commit hooks with Husky
 - [ ] Add Travis CI 
-- [ ] Add Rubocop pre-commit hooks with Husky

@@ -1,4 +1,19 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
-
-<%= link_to "New Article", new_article_path %>
+<h1 class="m-3">Latest Articles</h1>
+<%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg my-3", id: "new-article-btn" %>
+<% if @articles.empty? %>
+  <h1 id="no-articles">No Articles Created</h1>
+<% else %>
+  <% @articles.each do |article| %>
+    <div class="my-3">
+      <div class="mb-3 pl-3">
+        <h2><%= link_to article.title, article_path(article), class: "text-decoration-none" %></h2>
+      </div>
+      <div class="text-muted mb-2">
+        <%= article.updated_at.strftime("%m %b, %G") %> Author
+      </div>
+      <div class="pl-3">
+        <%= truncate(article.body, length: 500) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
