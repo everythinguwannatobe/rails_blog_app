@@ -34,6 +34,7 @@ group :development do
   gem "rubocop"
   gem "rubocop-rails", require: false
   gem "rubocop-rspec"
+  gem "guard-cucumber"
 end
 
 group :test do
