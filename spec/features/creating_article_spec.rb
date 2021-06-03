@@ -16,9 +16,7 @@ RSpec.describe "Creating Articles", type: :feature do
   end
 
   scenario "A user fails to create an article" do
-    visit "/"
-
-    click_link "New Article"
+    visit new_article_path
 
     fill_in "Title", with: ""
     fill_in "Body", with: ""

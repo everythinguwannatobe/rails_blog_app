@@ -2,6 +2,7 @@
   "name": "blog-app",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "@popperjs/core": "^2.9.2",
     "@rails/actioncable": "^6.0.2",
     "@rails/activestorage": "^6.0.2",
@@ -14,8 +15,8 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.2",
-    "husky": "^6.0.0"
+    "husky": "^6.0.0",
+    "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
     "prepare": "husky install",

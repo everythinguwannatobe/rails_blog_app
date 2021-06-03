@@ -41,6 +41,8 @@ group :test do
   gem "rexml"
   gem "simplecov", require: false
   gem "capybara"
+  gem "selenium"
+  gem "webdrivers"
 end
 
 group :production do
