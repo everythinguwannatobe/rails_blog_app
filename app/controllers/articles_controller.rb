@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show]
+  before_action :set_article, only: [:show, :edit, :update]
 
   def index
     @articles = Article.all.order(created_at: :desc)
@@ -20,6 +20,18 @@ class ArticlesController < ApplicationController
     else
       flash.now[:danger] = "Article has not been created"
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @article.update(article_params)
+      flash[:success] = "Article has been saved"
+      redirect_to @article
+    else
+      render :edit
     end
   end
 
