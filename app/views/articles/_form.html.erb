@@ -35,8 +35,15 @@
     </div>
   </div>
   <div class='form-group'>
-    <div class='col-md-offset-1 col-md-11'>
-      <%= f.submit class: 'btn btn-primary btn-lg pull-right' %>
+    <div class='d-flex'>
+      <%= f.submit class: 'btn btn-primary btn-lg' %>
+      <% if @article.persisted? %>
+        <div>
+          <%= link_to "Delete Article", article_path(@article), method: :delete,
+                      data: { confirm: "Are you sure you wish to delete this article?" },
+                      class: 'btn btn-outline-danger btn-lg mx-3' %>
+        </div>
+      <% end %>
     </div>
   </div>
 <% end %>
