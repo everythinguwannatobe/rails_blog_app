@@ -9,4 +9,8 @@
   <div class="mt-3">
     <p><%= @article.body %></p>
   </div>
+
+  <div>
+    <%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary btn-lg" %>
+  </div>
 </article>
