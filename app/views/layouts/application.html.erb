@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <% flash.each do |key, message| %>
-      <div class="text-center alert alert-<%= key == 'notice' ? 'success' : 'danger' %>">
-        <%= message %>
-      </div>
-    <% end %>
-
-    <%= yield %>
+    <%= render "shared/header" %>
+    <%= render "shared/main" %>
   </body>
 </html>
