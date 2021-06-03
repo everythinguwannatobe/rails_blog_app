@@ -12,6 +12,6 @@ RSpec.describe "ShowArticles", type: :system do
 
     expect(page).to have_content(@article.title)
     expect(page).to have_content(@article.body)
-    expect(current_path).to eq(article_path(@article))
+    expect(page).to have_current_path(article_path(@article), ignore_query: true)
   end
 end
