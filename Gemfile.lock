@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/king601/devise-bootstrapped.git
+  revision: 59e23f0673c9a273be765ca26091c5792cd25fa7
+  branch: bootstrap4
+  specs:
+    devise-bootstrapped (0.2.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -325,6 +332,7 @@ DEPENDENCIES
   byebug
   capybara
   devise (~> 4.8)
+  devise-bootstrapped!
   faker
   fuubar
   guard
