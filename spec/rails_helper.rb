@@ -6,6 +6,8 @@ require "rspec/rails"
 require "capybara/rails"
 require "fuubar"
 
+include Warden::Test::Helpers
+
 Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 begin

@@ -13,6 +13,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 # ===== App specific gems ======================
 gem "faker"
 gem "devise-bootstrapped", github: "king601/devise-bootstrapped", branch: "bootstrap4"
+gem "strong_migrations"
 
 group :development, :test do
   gem "sqlite3", "~> 1.4"
