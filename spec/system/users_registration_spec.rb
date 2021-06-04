@@ -1,33 +1,19 @@
 require "rails_helper"
 
-RSpec.describe "SigningUsersUps", type: :system do
+RSpec.describe "UserLogin", type: :system do
   before do
-    driven_by(:rack_test)
+    @john = User.create!(email: "john@example.com", password: "password")
   end
 
   scenario "with valid credentials" do
     visit root_path
 
-    click_link "Sign up"
+    click_link "Log in"
 
-    fill_in "Email Address", with: "user@example.com"
-    fill_in "Password", with: "password"
-    fill_in "Confirm Password", with: "password"
-    click_button "Sign up"
+    fill_in "Email Address", with: @john.email
+    fill_in "Password", with: @john.password
+    click_button "Log in"
 
-    expect(page).to have_content("You have signed up successfully")
-  end
-
-  scenario "with invalid credentials" do
-    visit root_path
-
-    click_link "Sign up"
-
-    fill_in "Email Address", with: ""
-    fill_in "Password", with: ""
-    fill_in "Confirm Password", with: ""
-    click_button "Sign up"
-
-    # expect(page).to have_content("You have not signed up successfully")
+    # expect(page).to have_content("You have signed up successfully")
   end
 end
