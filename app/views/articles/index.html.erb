@@ -9,7 +9,7 @@
         <h2><%= link_to article.title, article_path(article), class: "text-decoration-none" %></h2>
       </div>
       <div class="text-muted mb-2">
-        <%= article.updated_at.strftime("%m %b, %G") %> Author
+        <i class="far fa-calendar-times me-2"></i><%= article.updated_at.strftime("%m %b, %G") %> Author
       </div>
       <div class="pl-3">
         <%= truncate(article.body, length: 500) %>
