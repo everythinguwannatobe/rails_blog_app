@@ -11,16 +11,36 @@ RSpec.describe "ListingArticles", type: :system do
     )
   end
 
-  scenario "A user lists all articles" do
-    visit "/"
+  scenario "with articles created and user not signed in" do
+    visit root_path
 
     expect(page).to have_content(@article1.title)
     expect(page).to have_content(@article1.body)
     expect(page).to have_content(@article2.title)
     expect(page).to have_content(@article2.body)
-
     expect(page).to have_link(@article1.title)
     expect(page).to have_link(@article2.title)
+    expect(page).not_to have_link("New Article")
+  end
+
+  scenario "with articles created and user signed in" do
+    Article.delete_all
+
+    login_as(@john)
+    visit "/"
+
+    expect(page).not_to have_content(@article1.title)
+    expect(page).not_to have_content(@article1.body)
+    expect(page).not_to have_content(@article2.title)
+    expect(page).not_to have_content(@article2.body)
+
+    expect(page).not_to have_link(@article1.title)
+    expect(page).not_to have_link(@article2.title)
+    expect(page).to have_link("New Article")
+
+    within("h1#no-articles") do
+      expect(page).to have_content("No Articles Created")
+    end
   end
 
   scenario "A user has no articles" do
@@ -32,7 +52,6 @@ RSpec.describe "ListingArticles", type: :system do
     expect(page).not_to have_content(@article1.body)
     expect(page).not_to have_content(@article2.title)
     expect(page).not_to have_content(@article2.body)
-
     expect(page).not_to have_link(@article1.title)
     expect(page).not_to have_link(@article2.title)
 
