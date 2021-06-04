@@ -46,7 +46,7 @@ guard :rspec, cmd: "bundle exec rspec" do
     "spec/models/#{matches[1]}_spec.rb"
   end
   watch(%r{^app/controllers/(.*?)_controller\.rb$}) do |matches|
-    resource_tests(matches[1])
+    resource_tests(matches[1]) + integration_tests(matches[1])
   end
   watch(%r{^app/views/([^/]*?)/.*\.html\.erb$}) do |matches|
     ["spec/controllers/#{matches[1]}_controller_spec.rb"] +
