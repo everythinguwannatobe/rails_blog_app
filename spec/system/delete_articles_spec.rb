@@ -3,7 +3,8 @@ require "rails_helper"
 RSpec.describe "DeleteArticles", type: :system do
   before do
     @article = Article.create!(
-      title: "First Article", body: "Body of article one")
+      title: "First Article", body: "Body of article one"
+    )
   end
 
   scenario "User deletes an article" do
