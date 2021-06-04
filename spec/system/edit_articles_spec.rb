@@ -19,4 +19,18 @@ RSpec.describe "EditingArticles", type: :system do
     expect(page).to have_content("Article has been saved")
     expect(page).to have_current_path(article_path(@article), ignore_query: true)
   end
+
+  scenario "A user fails to update an article" do
+    visit "/"
+
+    click_link @article.title
+    click_link "Edit Article"
+
+    fill_in "Title", with: ""
+    fill_in "Body", with: "Updated Body of Article"
+    click_button "Update Article"
+
+    expect(page).to have_content("Article has not been updated")
+    expect(page).to have_current_path(article_path(@article), ignore_query: true)
+  end
 end

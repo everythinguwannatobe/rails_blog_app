@@ -1,5 +1,8 @@
 <h1 class="m-3">Latest Articles</h1>
-<%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg my-3", id: "new-article-btn" %>
+<% if user_signed_in? %>
+  <%= link_to "New Article", new_article_path, class: "btn btn-primary btn-lg my-3", id: "new-article-btn" %>
+<% end %>
+
 <% if @articles.empty? %>
   <h1 id="no-articles">No Articles Created</h1>
 <% else %>
