@@ -28,7 +28,7 @@ RSpec.describe "ShowArticles", type: :system do
 
     expect(page).to have_content(@article.title)
     expect(page).to have_content(@article.body)
-    expect(current_path).to eq(article_path(@article))
+    expect(page).to have_current_path(article_path(@article), ignore_query: true)
 
     expect(page).not_to have_link("Edit Article")
     expect(page).not_to have_link("Delete Article")
@@ -41,7 +41,7 @@ RSpec.describe "ShowArticles", type: :system do
 
     expect(page).to have_content(@article.title)
     expect(page).to have_content(@article.body)
-    expect(current_path).to eq(article_path(@article))
+    expect(page).to have_current_path(article_path(@article))
 
     expect(page).to have_link("Edit Article")
     expect(page).to have_link("Delete Article")
