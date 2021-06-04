@@ -1,22 +1,31 @@
 require "rails_helper"
 
-RSpec.describe "Creating Articles", type: :feature do
-  scenario "A user can create an article" do
-    visit "/"
+RSpec.describe "CreateArticles", type: :system do
+  before do
+    @john = User.create!(email: "john@example.com", password: "password")
+    login_as(@john)
+  end
+
+  scenario "A user creates a new article" do
+    visit root_path
 
     click_link "New Article"
 
     fill_in "Title", with: "Creating a blog"
-    fill_in "Body", with: "Lorem ipsum"
+    fill_in "Body", with: "Lorem Ipsum"
 
     click_button "Create Article"
 
+    expect(Article.last.user).to eq(@john)
     expect(page).to have_content("Article has been created")
     expect(page).to have_current_path(articles_path, ignore_query: true)
+    expect(page).to have_content("Created by: #{@john.email}")
   end
 
-  scenario "A user fails to create an article" do
-    visit new_article_path
+  scenario "A user fails to create a new article" do
+    visit "/"
+
+    click_link "New Article"
 
     fill_in "Title", with: ""
     fill_in "Body", with: ""
