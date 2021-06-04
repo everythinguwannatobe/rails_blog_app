@@ -292,6 +292,8 @@ GEM
     standard (1.1.1)
       rubocop (= 1.14.0)
       rubocop-performance (= 1.11.2)
+    strong_migrations (0.7.6)
+      activerecord (>= 5)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -355,6 +357,7 @@ DEPENDENCIES
   spring
   sqlite3 (~> 1.4)
   standard
+  strong_migrations
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

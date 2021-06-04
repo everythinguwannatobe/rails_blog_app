@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe "EditingArticles", type: :system do
   before do
-    @article = Article.create!(title: "First Article", body: "Body of article one")
+    @john = User.create(email: "john@example.com", password: "password")
+    @article = Article.create!(title: "First Article", body: "Body of article one", user: @john)
   end
 
   scenario "User updates an article" do
