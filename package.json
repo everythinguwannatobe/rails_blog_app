@@ -2,7 +2,7 @@
   "name": "blog-app",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@popperjs/core": "^2.9.3",
     "@rails/actioncable": "^6.1.4",
     "@rails/activestorage": "^6.1.4",
