@@ -16,7 +16,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "husky": "^7.0.4",
-    "webpack-dev-server": "^4.7.0"
+    "webpack-dev-server": "^4.7.1"
   },
   "scripts": {
     "prepare": "husky install",
