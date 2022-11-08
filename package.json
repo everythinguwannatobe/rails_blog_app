@@ -15,7 +15,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "husky": "^8.0.1",
+    "husky": "^8.0.2",
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
